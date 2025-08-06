@@ -53,7 +53,7 @@ class Main {
             System.out.println("\n1. Add Student\n2. View Student Details\n3. Update Existing Student Details\n4. Delete Student Record\n5. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
-            sc.nextLine(); // Consume the newline character
+            sc.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -85,7 +85,7 @@ class Main {
         int id = sc.nextInt();
         System.out.print("Enter Student Marks: ");
         double marks = sc.nextDouble();
-        sc.nextLine(); // Consume the newline character
+        sc.nextLine(); 
 
         Student st = new Student(name, marks, id);
         ar.add(st);
@@ -98,7 +98,7 @@ class Main {
         } else {
             System.out.println("Here are the details:");
             for (Student s : ar) {
-                System.out.println(s); // This calls the toString() method
+                System.out.println(s); 
             }
         }
     }
@@ -106,7 +106,7 @@ class Main {
     public static void updateDetails() {
         System.out.print("Enter the ID you want to update: ");
         int uid = sc.nextInt();
-        sc.nextLine(); // Consume the newline character
+        sc.nextLine(); 
         boolean found = false;
 
         for (Student s : ar) {
@@ -115,7 +115,7 @@ class Main {
                 String name = sc.nextLine();
                 System.out.print("Enter new Marks: ");
                 double marks = sc.nextDouble();
-                sc.nextLine(); // Consume the newline character
+                sc.nextLine(); 
 
                 s.setName(name);
                 s.setMarks(marks);
@@ -133,7 +133,7 @@ class Main {
     public static void deleteStudent() {
         System.out.print("Enter the ID of the student you want to delete: ");
         int id = sc.nextInt();
-        sc.nextLine(); // Consume the newline character
+        sc.nextLine(); 
         boolean removed = ar.removeIf(s -> s.getId() == id);
 
         if (removed) {
@@ -142,4 +142,5 @@ class Main {
             System.out.println("Student with ID " + id + " not found.");
         }
     }
+
 }
